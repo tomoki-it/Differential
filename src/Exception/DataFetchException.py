@@ -1,0 +1,2 @@
+class DataFetchException(Exception):
+    pass
