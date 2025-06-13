@@ -1,6 +1,6 @@
-from src.init import init
+from src.Initialize import Initialize
 import sys
 
 if __name__ == "__main__":
-    init = init(sys.argv)
+    init = Initialize(sys.argv)
     init.run()

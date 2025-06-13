@@ -1,15 +1,15 @@
 from src.Analysis.Analysis import Analysis
 from src.Exception.InvalidInstanceException import InvalidInstanceException
 
-class init:
+class Initialize:
 
     args = None
 
     def __init__(self, args):
-        init.args = args
+        Initialize.args = args
 
     def run(self):
-        args = init.args
+        args = Initialize.args
         if len(args) == 1:
             raise InvalidInstanceException("No arguments provided")
 
