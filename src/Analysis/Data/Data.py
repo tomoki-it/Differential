@@ -14,9 +14,8 @@ class Data:
     def getFromMarketPlace():
         data = yf.download(
             tickers="BTC-USD",
-            interval="1h",
-            period="7d",
-            start="2023-07-01"
+            interval="1d",
+            period="max",
         )
 
         if not isinstance(data, pd.DataFrame) | data.empty:
@@ -30,10 +29,9 @@ class Data:
             data = Data.getFromMarketPlace()
             result = {}
             for timestamp, row in data.iterrows():
-                key = pd.to_datetime(timestamp).strftime("%Y-%m-%d %H:%M:%S")
+                key = pd.to_datetime(timestamp).strftime("%Y-%m-%d")
                 result[key] = {
                     "Open": float(row["Open"].iloc[0]),
-                    "Close": float(row["Close"].iloc[0])
                 }
 
             output_dir = "output"
