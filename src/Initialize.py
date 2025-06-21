@@ -1,5 +1,5 @@
 from src.Analysis.Analysis import Analysis
-from src.Exception.InvalidInstanceException import InvalidInstanceException
+from src.Exception.InvalidArgumentException import InvalidArgumentException
 
 class Initialize:
 
@@ -11,13 +11,13 @@ class Initialize:
     def run(self):
         args = Initialize.args
         if len(args) == 1:
-            raise InvalidInstanceException("No arguments provided")
+            raise InvalidArgumentException("No arguments given")
 
         if len(args) == 2:
             if args[1] == "help":
                 print("This is a help message. Please provide valid arguments!")
             else:
-                raise InvalidInstanceException("Invalid argument provided")
+                raise InvalidArgumentException("Invalid argument given")
             return
 
         if len(args) >= 3:
