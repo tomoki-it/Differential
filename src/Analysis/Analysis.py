@@ -14,5 +14,7 @@ class Analysis:
             Data.getFromMarketPlace()
         elif self.task == "output":
             Data.outputToJson()
+        elif self.task  == "differential":
+            Data.differential()
         else:
             raise InvalidArgumentException("Invalid task provided")
